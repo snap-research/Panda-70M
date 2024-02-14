@@ -1,0 +1,6 @@
+Some information about a video you will get:
+Transcription: Today we're gonna take a quick look at the 1966 Ford Mustang GT 289 v8 under the hood.
+Metadata: ['Old VS New - 1966 Ford Mustang GT & 2018 Ford Mustang | Just a Quick Look', 'Lets check out this beautiful 1966 Ford Mustang GT 289 in the showroom with the 2018 Ford Mustang!']
+Please look at the video and faithfully summarize it in one sentence.
+
+Please faithfully summarize the following video in one sentence.

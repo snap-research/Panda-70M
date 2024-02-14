@@ -1,0 +1,6 @@
+datasets:
+  msrvtt:
+    data_type: video
+    build_info:
+      anno_dir: path/msrvtt/msrvtt_tain_data/annotations/
+      videos_dir: path/msrvtt/msrvtt_tain_data/videos/
