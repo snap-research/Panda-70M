@@ -1,0 +1,20 @@
+--extra-index-url https://download.pytorch.org/whl/cu113
+torch==1.12.1
+torchvision==0.13.1
+torchaudio==0.12.1
+pytorchvideo @ git+https://github.com/facebookresearch/pytorchvideo.git@28fe037d212663c6a24f373b94cc5d478c8c1a1d
+timm
+ftfy
+regex
+einops
+fvcore
+eva-decord
+iopath
+numpy
+matplotlib
+types-regex
+mayavi
+pytz
+scenedetect
+tqdm
+opencv-python

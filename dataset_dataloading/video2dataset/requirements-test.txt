@@ -1,0 +1,15 @@
+black==22.3.0
+mypy==1.6.0
+types-requests==2.31.0.8
+types-PyYAML==6.0.12.12
+pylint==2.13.4
+pytest-cov==3.0.0
+pytest-xdist==2.5.0
+pytest==7.0.1
+types-requests
+webvtt-py
+tensorflow
+tensorflow_io
+torch
+types-pyyaml
+whisperx @ git+https://github.com/m-bain/whisperx@main
