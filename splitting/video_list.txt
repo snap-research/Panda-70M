@@ -1,2 +1,0 @@
-input_videos/video1.mp4
-input_videos/video2.mp4
