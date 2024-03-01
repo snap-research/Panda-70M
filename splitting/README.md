@@ -13,7 +13,7 @@ conda activate panda70m_splitting
 pip install -r requirements.txt
 ```
 
-### Step 1: Cutscene Detection
+### Step 1: Shot Boundary Detection
 ```
 python cutscene_detect.py --video-list video_list.txt --output-json-file cutscene_frame_idx.json
 ```
