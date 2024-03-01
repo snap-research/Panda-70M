@@ -1,0 +1,7 @@
+datasets:
+  hdvila100m:
+    data_type: video
+    build_info:
+      anno_train: path/hdvila100m/hdvila_data/annotations_train.json
+      anno_test: path/hdvila100m/hdvila_data/annotations_test.json
+      videos_dir: path/hdvila100m/hdvila_data/videos/
