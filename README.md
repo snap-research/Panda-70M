@@ -16,7 +16,7 @@ Ming-Hsuan Yang,
 Sergey Tulyakov
 
 <!-- [Arxiv Report](https://arxiv.org/abs/2307.04725) | [Project Page](https://snap-research.github.io/Panda-70M) -->
-[![arXiv](https://img.shields.io/badge/arXiv-2312.00000-b31b1b.svg)](https://arxiv.org/abs/2312.00000)
+[![arXiv](https://img.shields.io/badge/arXiv-2402.19479-b31b1b.svg)](https://arxiv.org/abs/2402.19479)
 [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://snap-research.github.io/Panda-70M)
 
 ## Introduction
@@ -89,9 +89,9 @@ More details can be found in [Dataset Dataloading](./dataset_dataloading) sectio
 Please check [here](https://snap-research.github.io/Panda-70M/more_samples) for more samples.
 
 ### Long Video Splitting and Captioning
-https://github.com/tsaishien-chen/Panda-70M/assets/43384650/8087ed15-edfc-4556-9da8-b8a262c97350
+https://github.com/tsaishien-chen/Panda-70M/assets/43384650/481b369a-122b-4571-a83e-416201ebd6c9
 
-https://github.com/tsaishien-chen/Panda-70M/assets/43384650/e7b41c5c-c02b-400f-aae5-2dde0d2a8fdb
+https://github.com/tsaishien-chen/Panda-70M/assets/43384650/fee5468d-815f-41a7-8202-bdb3b60fcac7
 
 ## License of Panda-70M
 
@@ -104,11 +104,11 @@ Users must follow [the related license](https://raw.githubusercontent.com/micros
 If you find this project useful for your research, please cite our paper. :blush:
 
 ```bibtex
-@article{chen2023panda70M,
+@article{chen2024panda70M,
     title   = {Panda-70M: Captioning 70M Videos with Multiple Cross-Modality Teachers},
     author  = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Deyneka, Ekaterina and Chao, Hsiang-wei and Jeon, Byung Eun and Fang, Yuwei and Lee, Hsin-Ying and Ren, Jian and Yang, Ming-Hsuan and Tulyakov, Sergey},
-    journal = {arXiv preprint arXiv:2402.00000},
-    year    = {2024},
+    journal = {arXiv preprint arXiv:2402.19479},
+    year    = {2024}
 }
 ```
 
