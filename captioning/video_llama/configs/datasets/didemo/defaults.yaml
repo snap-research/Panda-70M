@@ -1,0 +1,6 @@
+datasets:
+  didemo:
+    data_type: video
+    build_info:
+      anno_dir: path/didemo/didemo_tain_data/annotations/
+      videos_dir: path/didemo/didemo_tain_data/videos/
