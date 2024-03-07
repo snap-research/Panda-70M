@@ -23,6 +23,13 @@ if __name__ == "__main__":
     parser.add_argument("--video-list", required=True, help="list of input videos.")
     parser.add_argument("--output-json", default=None, help="output json file. Leave none to print out the results.")
     parser.add_argument("--prompt-list", default=None, help="list of correponding input prompts. Leave none if no prompt input.")
+    parser.add_argument(
+        "--options",
+        nargs="+",
+        help="override some settings in the used config, the key-value pair "
+        "in xxx=yyy format will be merged into config file (deprecate), "
+        "change to --cfg-options instead.",
+    )
     args = parser.parse_args()
     cfg = Config(args)
 
