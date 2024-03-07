@@ -174,3 +174,16 @@ div.scroll-container {
   width: 100%;
   height: auto;
 }
+
+.table-container {
+  width: 80%;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+  .table-container {
+    width: 100%;
+  }
+}
