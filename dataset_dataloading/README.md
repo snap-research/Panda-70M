@@ -1,7 +1,7 @@
 # 🐼 Panda-70M: Dataset Dataloading
 The section includes the csv files listing the data samples in Panda-70M and the code to download the videos.
 
-**[Note] Please use the video2dataset tool from this repository to download the dataset. If you have already installed video2dataset from [the official repository](https://github.com/iejMac/video2dataset), please uninstall it first, as it cannot work with our csv format.**
+**[Note] Please use the video2dataset tool from this repository to download the dataset. As the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format for now. We are working on making Panda-70M downloadable through the official video2dataset.**
 
 ## Data Splitting and Download Link
   | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space|
@@ -37,7 +37,8 @@ video2dataset --url_list="<csv_file>" \
               --save_additional_columns="[matching_score]" \
               --config="video2dataset/video2dataset/configs/panda_70M.yaml"
 ```
-- **[Note]** If you get `HTTP Error 403: Forbidden` error, it might because your IP got banned. Please refer [this issue](https://github.com/yt-dlp/yt-dlp/issues/8785) and try to download the data by another IP.
+- **[Note 1]** If you get `HTTP Error 403: Forbidden` error, it might because your IP got banned. Please refer [this issue](https://github.com/yt-dlp/yt-dlp/issues/8785) and try to download the data by another IP.
+- **[Note 2]** You will get `"status": "failed_to_download"` and `"error_message": "[Errno 2] No such file or directory: '/tmp/*.mp4'"`, if the YouTube video has been set to private or removed.
 
 ### Dataset Format
 The code will download and store the data with the format:
