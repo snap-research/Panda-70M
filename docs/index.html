@@ -23,7 +23,7 @@
 <body data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
 	<header>
 		<nav>
-			<a class="h5 pt-1" style="margin-left: 10px; color: #fff !important;" href="#panda70M">&#128060; Panda-70M</a>
+			<a class="h5 pt-1" style="margin-left: 10px; color: #fff !important;" href="#Panda70M">&#128060; Panda-70M</a>
 		</nav>
 		<nav>
 			<a href="#download">Download</a>
@@ -32,11 +32,10 @@
 			<a href="#statistic">Statistic</a>
 			<a href="#performance">Performance</a>
 			<a href="#acknowledgement">Acknowledgement</a>
-			<!-- Add more section links as needed -->
 		</nav>
 	</header>
 
-	<section class="jumbotron text-center pb-2" id="panda70M">
+	<section class="jumbotron text-center pb-2" id="Panda70M">
 		<div class="container">
 			<br><br><br>
 			<h1 class="jumbotron-heading" style="font-size: 5.5rem">&#128060; Panda-70M</h1>
@@ -54,13 +53,14 @@
 			<a href="https://alanspike.github.io/" style="font-size: 1.2rem; color: white !important;">Jian Ren</a>,
 			<a href="https://faculty.ucmerced.edu/mhyang/" style="font-size: 1.2rem; color: white !important;">Ming-Hsuan Yang</a>,
 			<a href="http://www.stulyakov.com/" style="font-size: 1.2rem; color: white !important;">Sergey Tulyakov</a>
-			<br>
-			<a href="https://research.snap.com/team/category/creative-vision"><img class="paper-btn" src="./assets/snap.svg" style="height: 80px; width: auto; margin-top: 50px; margin-bottom: 30px; background-color: #18191a;"></a>
-			<a href="https://www.ucmerced.edu/"><img class="paper-btn" src="./assets/ucmerced.svg" style="height: 80px; width: auto; margin-top: 50px; margin-bottom: 30px; margin-left: 30px; background-color: #18191a;"></a>
-			<div class="paper-btn-parent">
-			<a class="paper-btn" href="https://arxiv.org/abs/2402.19479">Read research paper</a>
-			<a class="paper-btn" style="width: 80px" href="https://github.com/snap-research/Panda-70M">Github</a>
-			<a class="paper-btn" href="./more_samples.html">View more samples</a>
+			<br><br><br>
+			<a href="https://research.snap.com/team/category/creative-vision"><img class="paper-btn" src="./assets/snap.svg" style="height: 80px; width: auto; background-color: #18191a;"></a>
+			<a href="https://www.ucmerced.edu/"><img class="paper-btn" src="./assets/ucmerced.svg" style="height: 80px; width: auto; background-color: #18191a;"></a>
+			<br><br>
+				<div class="paper-btn-parent">
+				<a class="paper-btn" href="https://arxiv.org/abs/2402.19479">Read research paper</a>
+				<a class="paper-btn" style="width: 80px" href="https://github.com/snap-research/Panda-70M">Github</a>
+				<a class="paper-btn" href="./more_samples.html">View more samples</a>
 			</div>
 			<br><br><br>
 		</div>
@@ -380,10 +380,12 @@
 
 			for (var i = 0; i < elements.length; i++) {
 				// Adjust the threshold and font size as needed
-				if (screenWidth < 800) {
-					elements[i].style.fontSize = "8px";
+				if (screenWidth < 600) {
+					elements[i].style.fontSize = "7px";
+				} else if (screenWidth < 800) {
+					elements[i].style.fontSize = "10px";
 				} else if (screenWidth < 1000) {
-					elements[i].style.fontSize = "12px";
+					elements[i].style.fontSize = "13px";
 				} else {
 					elements[i].style.fontSize = "16px";
 				}
