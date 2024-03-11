@@ -1,7 +1,7 @@
 # 🐼 Panda-70M: Dataset Dataloading
 The section includes the csv files listing the data samples in Panda-70M and the code to download the videos.
 
-**[Note] Please use the video2dataset tool from this repository to download the dataset. As the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format for now. We are working on making Panda-70M downloadable through the official video2dataset.**
+**[Note] Please use the video2dataset tool from this repository to download the dataset, as the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format for now.**
 
 ## Data Splitting and Download Link
   | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space|
@@ -20,12 +20,11 @@ The section includes the csv files listing the data samples in Panda-70M and the
 ## Download Dataset
 ### Setup Repository and Enviroment
 ```
-git clone https://github.com/tsaishien-chen/Panda-70M.git
+git clone https://github.com/snap-research/Panda-70M.git
 cd Panda-70M/dataset_dataloading/video2dataset
 pip install -e .
 cd ..
 ```
-
 ### Download Dataset
 Download the csv files and change `<csv_file>` and `<output_folder>` arguments to download corresponding data.
 ```
@@ -37,8 +36,25 @@ video2dataset --url_list="<csv_file>" \
               --save_additional_columns="[matching_score]" \
               --config="video2dataset/video2dataset/configs/panda_70M.yaml"
 ```
-- **[Note 1]** If you get `HTTP Error 403: Forbidden` error, it might because your IP got banned. Please refer [this issue](https://github.com/yt-dlp/yt-dlp/issues/8785) and try to download the data by another IP.
-- **[Note 2]** You will get `"status": "failed_to_download"` and `"error_message": "[Errno 2] No such file or directory: '/tmp/*.mp4'"`, if the YouTube video has been set to private or removed.
+### Common Errors
+<table class="center">
+  <tr style="line-height: 0">
+    <td width=40% style="border: none; text-align: center"><b>Error Message</td>
+    <td width=60% style="border: none; text-align: center"><b>Solution</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=40% style="border: none; text-align: center"><pre>HTTP Error 403: Forbidden</pre></td>
+    <td width=60% style="border: none; text-align: center">Your IP got blocked. Please use proxy for downloading. Refer <a href="https://github.com/yt-dlp/yt-dlp/issues/8785">this issue</a>.</td>
+    </tr>
+    <tr style="line-height: 0">
+      <td width=40% style="border: none; text-align: center"><pre>HTTP Error 429: Too Many Requests</pre></td>
+      <td width=60% style="border: none; text-align: center">Your download request reaches a limitation. Please slow down the download speed. Refer <a href="https://github.com/iejMac/video2dataset/issues/267">this issue</a>.</td>
+    </tr>
+    <tr style="line-height: 0">
+      <td width=40% style="border: none; text-align: center">In the json file:<pre>"status": "failed_to_download" & "error_message":<br>"[Errno 2] No such file or directory: '/tmp/...'"</pre></td>
+      <td width=60% style="border: none; text-align: center">The YouTube video has been set to private or removed. Please skip this sample.</td>
+    </tr>
+</table>
 
 ### Dataset Format
 The code will download and store the data with the format:
