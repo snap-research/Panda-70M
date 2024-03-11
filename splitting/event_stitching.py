@@ -197,7 +197,7 @@ if __name__ == "__main__":
         cutscenes, cutscene_feature = verify_cutscene(cutscene, cutscene_raw_feature, cutscene_raw_status, transition_threshold=1.)
         events_raw, event_feature_raw = cutscene_stitching(cutscenes, cutscene_feature, eventcut_threshold=0.6)
         events, event_feature = verify_event(events_raw, event_feature_raw, fps, min_event_len=2.0, max_event_len=1200, redundant_event_threshold=0.0, trim_begin_last_percent=0.0, still_event_threshold=0.15)
-        # events, event_feature = verify_event(events_raw, event_feature_raw, min_event_len=2.5, max_event_len=60, redundant_event_threshold=0.3, trim_begin_last_percent=0.1, still_event_threshold=0.15)
+        # events, event_feature = verify_event(events_raw, event_feature_raw, fps, min_event_len=2.5, max_event_len=60, redundant_event_threshold=0.3, trim_begin_last_percent=0.1, still_event_threshold=0.15)
         video_events[video_path.split("/")[-1]] = transfer_timecode(events, fps)
        
     write_json_file(video_events, args.output_json_file)
