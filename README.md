@@ -97,7 +97,7 @@ https://github.com/tsaishien-chen/Panda-70M/assets/43384650/fee5468d-815f-41a7-8
 
 ## License of Panda-70M
 
-See [license](https://github.com/tsaishien-chen/Panda-70M/blob/main/LICENSE).
+See [license](https://github.com/snap-research/Panda-70M/blob/main/LICENSE).
 The video samples are collected from a publicly available dataset.
 Users must follow [the related license](https://raw.githubusercontent.com/microsoft/XPretrain/main/hd-vila-100m/LICENSE) to use these video samples.
 
