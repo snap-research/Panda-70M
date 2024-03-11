@@ -19,7 +19,7 @@ conda create --name panda70m_captioning python=3.9 -y
 conda activate panda70m_captioning
 pip install -r requirements.txt
 
-# install ffmpeg
+# install default JRE
 apt update
 apt install default-jre
 ```
