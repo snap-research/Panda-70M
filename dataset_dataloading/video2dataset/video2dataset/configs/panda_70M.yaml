@@ -3,7 +3,7 @@ subsampling: {}
 reading:
     yt_args:
         download_size: 360
-        download_audio_rate: 44100
+        download_audio: True
         yt_metadata_args:
             writesubtitles:  True
             subtitleslangs: ['en']

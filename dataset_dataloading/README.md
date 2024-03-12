@@ -4,8 +4,8 @@ The section includes the csv files listing the data samples in Panda-70M and the
 **[Note] Please use the video2dataset tool from this repository to download the dataset, as the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format for now.**
 
 ## Data Splitting and Download Link
-  | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space|
-  |-----------------|----------|-----------------|-----------|----------------|--------------|
+  | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space |
+  |-----------------|----------|-----------------|-----------|----------------|---------------|
   | Training (full) | [link](https://drive.google.com/file/d/1DeODUcdJCEfnTjJywM-ObmrlVg-wsvwz/view?usp=sharing) (2.01 GB) | 3,779,763 | 70,723,513 | 167 khrs  | ~36 TB  |
   | Training (10M)  | [link](https://drive.google.com/file/d/1Lrsb65HTJ2hS7Iuy6iPCmjoc3abbEcAX/view?usp=sharing) (381 MB)  | 3,755,240 | 10,473,922 | 37.0 khrs | ~8.0 TB |
   | Training (2M)   | [link](https://drive.google.com/file/d/1jWTNGjb-hkKiPHXIbEA5CnFwjhA-Fq_Q/view?usp=sharing) (86.5 MB) | 800,000   | 2,400,000  | 7.56 khrs | ~1.6 TB |
@@ -44,15 +44,19 @@ video2dataset --url_list="<csv_file>" \
   </tr>
   <tr style="line-height: 0">
     <td width=40% style="border: none; text-align: center"><pre>HTTP Error 403: Forbidden</pre></td>
-    <td width=60% style="border: none; text-align: center">Your IP got blocked. Please use proxy for downloading. Refer <a href="https://github.com/yt-dlp/yt-dlp/issues/8785">this issue</a>.</td>
+    <td width=60% style="border: none; text-align: center">Your IP got blocked. Use proxy for downloading. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/8785">this issue</a>.</td>
     </tr>
     <tr style="line-height: 0">
       <td width=40% style="border: none; text-align: center"><pre>HTTP Error 429: Too Many Requests</pre></td>
-      <td width=60% style="border: none; text-align: center">Your download request reaches a limitation. Please slow down the download speed. Refer <a href="https://github.com/iejMac/video2dataset/issues/267">this issue</a>.</td>
+      <td width=60% style="border: none; text-align: center">Your download requests reach a limit. Slow down the download speed by reducing processes_count and thread_count in the <a href="./video2dataset/video2dataset/configs/panda_70M.yaml">config</a> file. Please refer <a href="https://github.com/iejMac/video2dataset/issues/267">this issue</a>.</td>
     </tr>
     <tr style="line-height: 0">
       <td width=40% style="border: none; text-align: center">In the json file:<pre>"status": "failed_to_download" & "error_message":<br>"[Errno 2] No such file or directory: '/tmp/...'"</pre></td>
       <td width=60% style="border: none; text-align: center">The YouTube video has been set to private or removed. Please skip this sample.</td>
+    </tr>
+    <tr style="line-height: 0">
+      <td width=40% style="border: none; text-align: center"><pre>YouTube said: ERROR - Precondition check failed</pre></td>
+      <td width=60% style="border: none; text-align: center">Your yt-dlp version is out-of-date and need to install a nightly version. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/9316">this issue</a>.</td>
     </tr>
 </table>
 
@@ -82,6 +86,7 @@ output-folder
 - Meta information includes matching score (confidence score of each video-caption pair), caption, video title / description / categories / subtitles, to name but a few.
 - **[Note 1]** The dataset is unshuffled and the clips from a same long video would be stored into a shard. Please manually shuffle them if needed.
 - **[Note 2]** The videos are resized into 360 px height. You can change `download_size` in the [config](./video2dataset/video2dataset/configs/panda_70M.yaml) file to get different video resolutions.
+- **[Note 3]** The videos are downloaded with audio by default. You can change `download_audio` in the [config](./video2dataset/video2dataset/configs/panda_70M.yaml) file to turn off the audio and increase download speed.
 
 ## Acknowledgements
 The code for data downloading is built upon [video2dataset](https://github.com/iejMac/video2dataset).
