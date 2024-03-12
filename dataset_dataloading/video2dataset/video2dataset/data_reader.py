@@ -166,6 +166,7 @@ class YtDlpDownloader:
         self.metadata_args = yt_args.get("yt_metadata_args", {})
         self.video_size = yt_args.get("download_size", 360)
         self.audio_rate = yt_args.get("download_audio_rate", 44100)
+        self.download_audio = yt_args.get("download_audio", False)
         self.tmp_dir = tmp_dir
         self.encode_formats = encode_formats
 
@@ -177,9 +178,9 @@ class YtDlpDownloader:
         modality_paths = {}
 
         video_format_string = (
-            f"wv*[height>={self.video_size}][ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}/"
-            f"w[height>={self.video_size}][ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}/"
-            f"bv/b[ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}"
+            f"wv*[height>={self.video_size}][ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}{'+ba' if self.download_audio else ''}/"
+            f"w[height>={self.video_size}][ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}{'+ba' if self.download_audio else ''}/"
+            f"bv/b[ext=mp4]{'[codec=avc1]' if self.specify_codec else ''}{'+ba' if self.download_audio else ''}"
         )
         audio_fmt_string = (
             f"wa[asr>={self.audio_rate}][ext=m4a] / ba[ext=m4a]" if self.audio_rate > 0 else "ba[ext=m4a]"
