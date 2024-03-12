@@ -11,7 +11,7 @@ We release the checkpoint trained on Panda-70M.
 ## Preparations
 ### Setup Repository and Enviroment
 ```
-git clone https://github.com/tsaishien-chen/Panda-70M.git
+git clone https://github.com/snap-research/Panda-70M.git
 cd Panda-70M/captioning
 
 # create a conda environment
@@ -19,9 +19,9 @@ conda create --name panda70m_captioning python=3.9 -y
 conda activate panda70m_captioning
 pip install -r requirements.txt
 
-# install ffmpeg
-apt-get update -y
-apt-get install -y default-jre
+# install default JRE
+apt update
+apt install default-jre
 ```
 ### Download Checkpoint
 You can manually download the file [here](https://drive.google.com/file/d/1Gjp5LrgGJobcFi3AaXvLnzlY7IWXyaI5/view?usp=sharing) (3.82GB) and move it to the `checkpoint` folder or run:
@@ -30,7 +30,7 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 ```
 ### Prepare Vicuna:
 - Please follow the [intructions](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md) from FastChat to install **vicuna-7b-v0** weight.
-- **[Note]** You need to apply delta weights and after processed, the weights should be moved to `vicuna_weights/vicuna-7b-v0` folder with the file list like [this](https://github.com/tsaishien-chen/Panda-70M/blob/main/captioning/vicuna_weights/vicuna-7b-v0/README.md).
+- **[Note]** You need to apply delta weights and after processed, the weights should be moved to `vicuna_weights/vicuna-7b-v0` folder with the file list like [this](https://github.com/snap-research/Panda-70M/blob/main/captioning/vicuna_weights/vicuna-7b-v0/README.md).
 
 ## Quick Demo
 ```

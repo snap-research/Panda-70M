@@ -4,13 +4,16 @@ The section includes the code to split a long video into multiple semantics-cons
 ## Video Splitting and Quick Demo
 ### Setup Repository and Enviroment
 ```
-git clone https://github.com/tsaishien-chen/Panda-70M.git
+git clone https://github.com/snap-research/Panda-70M.git
 cd Panda-70M/splitting
 
 # create a conda environment
 conda create --name panda70m_splitting python=3.8.16 -y
 conda activate panda70m_splitting
 pip install -r requirements.txt
+
+# install ffmpeg
+apt install ffmpeg
 ```
 
 ### Step 1: Shot Boundary Detection
@@ -37,7 +40,7 @@ The code will process the videos listed in `video_list.txt` and stitch the seman
     "video2.mp4": [["0:00:00.000", "0:00:23.723"], ["0:00:23.723", "0:00:52.685"], ["0:00:52.685", "0:01:22.682"], ["0:01:22.682", "0:02:00.019"]]
 }
 ```
-- **[Note]** We make several changes of the parameters for better splitting results. If you want to use the same parameters as we collect Panda-70M, you can run [this line](https://github.com/tsaishien-chen/Panda-70M/blob/039da730b38de93e40e1a2f0ed5653cf93edf89c/splitting/event_stitching.py#L195) and comment out line 194.
+- **[Note]** We make several changes of the parameters for better splitting results. If you want to use the same parameters as we collect Panda-70M, you can run [line 200](https://github.com/snap-research/Panda-70M/blob/70226bd6d8ce3fc35b994b2d13273b57d5469da5/splitting/event_stitching.py#L200) and comment out [line 199](https://github.com/snap-research/Panda-70M/blob/70226bd6d8ce3fc35b994b2d13273b57d5469da5/splitting/event_stitching.py#L199).
 ### Step 3: Video Splitting
 ```
 python video_splitting.py --video-list video_list.txt --event-timecode event_timecode.json --output-folder outputs
