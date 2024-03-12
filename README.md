@@ -91,9 +91,9 @@ More details can be found in [Dataset Dataloading](./dataset_dataloading) sectio
 Please check [here](https://snap-research.github.io/Panda-70M/more_samples) for more samples.
 
 ### Long Video Splitting and Captioning
-https://github.com/tsaishien-chen/Panda-70M/assets/43384650/481b369a-122b-4571-a83e-416201ebd6c9
+https://github.com/snap-research/Panda-70M/assets/3857997/8144cf3d-c20c-4c18-a4bd-011451da9f9b
 
-https://github.com/tsaishien-chen/Panda-70M/assets/43384650/fee5468d-815f-41a7-8202-bdb3b60fcac7
+https://github.com/snap-research/Panda-70M/assets/3857997/b262128e-2152-41e8-873e-db2dc275c40f
 
 ## License of Panda-70M
 
