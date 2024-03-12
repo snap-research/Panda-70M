@@ -11,7 +11,7 @@ We release the checkpoint trained on Panda-70M.
 ## Preparations
 ### Setup Repository and Enviroment
 ```
-git clone https://github.com/tsaishien-chen/Panda-70M.git
+git clone https://github.com/snap-research/Panda-70M.git
 cd Panda-70M/captioning
 
 # create a conda environment
