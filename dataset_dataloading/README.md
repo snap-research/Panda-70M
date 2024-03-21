@@ -36,28 +36,32 @@ video2dataset --url_list="<csv_file>" \
               --save_additional_columns="[matching_score]" \
               --config="video2dataset/video2dataset/configs/panda_70M.yaml"
 ```
-### Common Errors
+### Known Issues
 <table class="center">
   <tr style="line-height: 0">
-    <td width=40% style="border: none; text-align: center"><b>Error Message</td>
-    <td width=60% style="border: none; text-align: center"><b>Solution</td>
+    <td width=50% style="border: none; text-align: center"><b>Error Message</td>
+    <td width=50% style="border: none; text-align: center"><b>Solution</td>
   </tr>
   <tr style="line-height: 0">
-    <td width=40% style="border: none; text-align: center"><pre>HTTP Error 403: Forbidden</pre></td>
-    <td width=60% style="border: none; text-align: center">Your IP got blocked. Use proxy for downloading. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/8785">this issue</a>.</td>
-    </tr>
-    <tr style="line-height: 0">
-      <td width=40% style="border: none; text-align: center"><pre>HTTP Error 429: Too Many Requests</pre></td>
-      <td width=60% style="border: none; text-align: center">Your download requests reach a limit. Slow down the download speed by reducing processes_count and thread_count in the <a href="./video2dataset/video2dataset/configs/panda_70M.yaml">config</a> file. Please refer <a href="https://github.com/iejMac/video2dataset/issues/267">this issue</a>.</td>
-    </tr>
-    <tr style="line-height: 0">
-      <td width=40% style="border: none; text-align: center">In the json file:<pre>"status": "failed_to_download" & "error_message":<br>"[Errno 2] No such file or directory: '/tmp/...'"</pre></td>
-      <td width=60% style="border: none; text-align: center">The YouTube video has been set to private or removed. Please skip this sample.</td>
-    </tr>
-    <tr style="line-height: 0">
-      <td width=40% style="border: none; text-align: center"><pre>YouTube said: ERROR - Precondition check failed</pre></td>
-      <td width=60% style="border: none; text-align: center">Your yt-dlp version is out-of-date and need to install a nightly version. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/9316">this issue</a>.</td>
-    </tr>
+    <td width=50% style="border: none; text-align: center"><pre>pyarrow.lib.ArrowTypeError: Expected bytes, got<br>a 'list' object</pre></td>
+    <td width=50% style="border: none; text-align: center">Your ffmpeg and ffmpeg-python version is out-of-date. Update them by pip or conda. Please refer <a href="https://github.com/kkroening/ffmpeg-python/issues/174">this issue</a> for more details.</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=50% style="border: none; text-align: center"><pre>HTTP Error 403: Forbidden</pre></td>
+    <td width=50% style="border: none; text-align: center">Your IP got blocked. Use proxy for downloading. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/8785">this issue</a> for more details.</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=50% style="border: none; text-align: center"><pre>HTTP Error 429: Too Many Requests</pre></td>
+    <td width=50% style="border: none; text-align: center">Your download requests reach a limit. Slow down the download speed by reducing processes_count and thread_count in the <a href="./video2dataset/video2dataset/configs/panda_70M.yaml">config</a> file. Please refer <a href="https://github.com/iejMac/video2dataset/issues/267">this issue</a> for more details.</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=50% style="border: none; text-align: center"><pre>YouTube said: ERROR - Precondition check failed</pre></td>
+    <td width=50% style="border: none; text-align: center">Your yt-dlp version is out-of-date and need to install a nightly version. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/9316">this issue</a> for more details.</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=50% style="border: none; text-align: center">In the json file:<pre>"status": "failed_to_download" & "error_message":<br>"[Errno 2] No such file or directory: '/tmp/...'"</pre></td>
+    <td width=50% style="border: none; text-align: center">The YouTube video has been set to private or removed. Please skip this sample.</td>
+  </tr>
 </table>
 
 ### Dataset Format
