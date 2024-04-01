@@ -266,11 +266,11 @@ class VideoDataReader:
         streams = {}
         for modality, modality_path in modality_paths.items():
             try:
-                with portalocker.Lock(modality_path, 'rb', timeout=120) as locked_file:
+                with portalocker.Lock(modality_path, 'rb', timeout=180) as locked_file:
                     streams[modality] = locked_file.read()
+                os.remove(modality_path)
             except portalocker.exceptions.LockException:
                 print(f"Timeout occurred trying to lock the file: {modality_path}")
-            try:
                 os.remove(modality_path)
             except IOError as e:
                 print(f"Failed to delete the file: {modality_path}. Error: {e}")
