@@ -154,7 +154,7 @@ class ClippingSubsampler(Subsampler):
             e_p = e
 
         segment_times = ",".join([str(spl) for spl in splits])
-        streams_clips = {}
+        streams_clips, metadata_clips = {}, []
 
         for k in streams.keys():
             stream_bytes = streams[k][0]  # pre-broadcast so only one

@@ -34,7 +34,7 @@ video2dataset --url_list="<csv_file>" \
               --clip_col="timestamp" \
               --output_folder="<output_folder>" \
               --save_additional_columns="[matching_score]" \
-              --config="video2dataset/video2dataset/configs/panda_70M.yaml"
+              --config="video2dataset/video2dataset/configs/panda70m.yaml"
 ```
 ### Known Issues
 <table class="center">
@@ -61,6 +61,10 @@ video2dataset --url_list="<csv_file>" \
   <tr style="line-height: 0">
     <td width=50% style="border: none; text-align: center">In the json file:<pre>"status": "failed_to_download" & "error_message":<br>"[Errno 2] No such file or directory: '/tmp/...'"</pre></td>
     <td width=50% style="border: none; text-align: center">The YouTube video has been set to private or removed. Please skip this sample.</td>
+  </tr>
+  <tr style="line-height: 0">
+    <td width=50% style="border: none; text-align: center"><pre>YouTube: Skipping player responses from android clients<br>(got player responses for video ... instead of ...)</pre></td>
+    <td width=50% style="border: none; text-align: center">The latest version of yt-dlp will solve this issue. Please refer <a href="https://github.com/yt-dlp/yt-dlp/issues/9554">this issue</a> for more details.</td>
   </tr>
 </table>
 
