@@ -34,7 +34,7 @@ video2dataset --url_list="<csv_file>" \
               --clip_col="timestamp" \
               --output_folder="<output_folder>" \
               --save_additional_columns="[matching_score]" \
-              --config="video2dataset/video2dataset/configs/panda_70M.yaml"
+              --config="video2dataset/video2dataset/configs/panda70m.yaml"
 ```
 ### Known Issues
 <table class="center">
