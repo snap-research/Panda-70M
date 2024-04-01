@@ -25,3 +25,4 @@ Pillow
 accelerate
 bitsandbytes
 scipy
+portalocker
