@@ -35,6 +35,7 @@ if __name__ == "__main__":
                     "video2dataset/configs/default.yaml",
                     "video2dataset/configs/downsample_ml.yaml",
                     "video2dataset/configs/optical_flow.yaml",
+                    "video2dataset/configs/panda70m.yaml",
                 ],
             )
         ],
