@@ -6,6 +6,7 @@ import yt_dlp
 import io
 import webvtt
 import ffmpeg
+import portalocker
 
 
 def video2audio(video, audio_format, tmp_dir):
@@ -264,8 +265,14 @@ class VideoDataReader:
 
         streams = {}
         for modality, modality_path in modality_paths.items():
-            with open(modality_path, "rb") as modality_file:
-                streams[modality] = modality_file.read()
-            os.remove(modality_path)
+            try:
+                with portalocker.Lock(modality_path, 'rb', timeout=120) as locked_file:
+                    streams[modality] = locked_file.read()
+            except portalocker.exceptions.LockException:
+                print(f"Timeout occurred trying to lock the file: {modality_path}")
+            try:
+                os.remove(modality_path)
+            except IOError as e:
+                print(f"Failed to delete the file: {modality_path}. Error: {e}")
 
         return key, streams, meta_dict, error_message
