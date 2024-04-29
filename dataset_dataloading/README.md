@@ -93,8 +93,8 @@ output-folder
 - Each data comes with 3 files: `.mp4` (video), `.txt` (caption), `.json` (meta information)
 - Meta information includes matching score (confidence score of each video-caption pair), caption, video title / description / categories / subtitles, to name but a few.
 - **[Note 1]** The dataset is unshuffled and the clips from a same long video would be stored into a shard. Please manually shuffle them if needed.
-- **[Note 2]** The videos are resized into 360 px height. You can change `download_size` in the [config](./video2dataset/video2dataset/configs/panda_70M.yaml) file to get different video resolutions.
-- **[Note 3]** The videos are downloaded with audio by default. You can change `download_audio` in the [config](./video2dataset/video2dataset/configs/panda_70M.yaml) file to turn off the audio and increase download speed.
+- **[Note 2]** The videos are resized into 360 px height. You can change `download_size` in the [config](./video2dataset/video2dataset/configs/panda70m.yaml) file to get different video resolutions.
+- **[Note 3]** The videos are downloaded with audio by default. You can change `download_audio` in the [config](./video2dataset/video2dataset/configs/panda70m.yaml) file to turn off the audio and increase download speed.
 
 ## Acknowledgements
 The code for data downloading is built upon [video2dataset](https://github.com/iejMac/video2dataset).
