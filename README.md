@@ -15,7 +15,7 @@ This is the offical Github repository of Panda-70M.
 [Ming-Hsuan Yang](https://faculty.ucmerced.edu/mhyang/),
 [Sergey Tulyakov](http://www.stulyakov.com/)
 </br>
-*Computer Vision and Pattern Recognition 2024*
+*Computer Vision and Pattern Recognition (CVPR) 2024*
 
 <!-- [Arxiv Report](https://arxiv.org/abs/2307.04725) | [Project Page](https://snap-research.github.io/Panda-70M) -->
 [![arXiv](https://img.shields.io/badge/arXiv-2402.19479-b31b1b.svg)](https://arxiv.org/abs/2402.19479)
