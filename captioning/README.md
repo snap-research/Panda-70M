@@ -61,7 +61,7 @@ Please look at the video and faithfully summarize it in one sentence.</sup></td>
     </tr>
 </table>
 
-<sup>**We will remove the video samples from our dataset / Github / project webpage as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
+<sup>**We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
 
 - **[Note]** You might get different outputs due to the randomness of LLM's generation.
 
