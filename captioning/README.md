@@ -1,6 +1,6 @@
 # 🐼 Panda-70M: Video Captioning
 
-**[Note] To use our captioning code, please make sure you follow [this guideline](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#how-to-apply-delta-weights-only-needed-for-weights-v0) and correctly prepare vicuna-7b-v0 weight. Basically, you need to first download the original weights and then apply delta weights. Improper weights preparation will lead to meaningless outputs.**
+**[Note] To run the captioning code, please make sure you follow [this guideline](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#how-to-apply-delta-weights-only-needed-for-weights-v0) and correctly prepare vicuna-7b-v0 weight. You need to first download the original weights and then apply delta weights. Improper weights preparation will lead to meaningless outputs.**
 
 ## Introduction
 We propose a video captioning model to generate a caption for a short video clip.
@@ -61,7 +61,7 @@ Please look at the video and faithfully summarize it in one sentence.</sup></td>
     </tr>
 </table>
 
-<sup>**We will remove the video samples from our dataset / Github / project webpage as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
+<sup>**We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
 
 - **[Note]** You might get different outputs due to the randomness of LLM's generation.
 

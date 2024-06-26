@@ -61,7 +61,7 @@ The code will split the videos listed in the `video_list.txt` and output the vid
     </tr>
 </table>
 
-<sup>**We will remove the video samples from our dataset / Github / project webpage as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
+<sup>**We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
 
 ## Acknowledgements
 The code for video splitting is built upon [PySceneDetect](https://github.com/Breakthrough/PySceneDetect) and [ImageBind](https://github.com/facebookresearch/ImageBind).

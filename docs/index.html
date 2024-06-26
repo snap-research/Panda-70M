@@ -27,6 +27,7 @@
 		</nav>
 		<nav>
 			<a href="#download">Download</a>
+			<a href="#presentation">Presentation</a>
 			<a href="#collection">Collection</a>
 			<a href="#demo">Demo</a>
 			<a href="#statistic">Statistic</a>
@@ -167,7 +168,7 @@
 			</div>
 		</div>
 		<div class="container text-center footnote">
-			We will remove the video samples from our dataset / Github / project webpage as long as you need it. Please contact tsaishienchen at gmail dot com for the request.
+			We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.
 		</div>
 	</div>
 
@@ -203,6 +204,16 @@
 				The video samples are collected from the publicy available dataset.<br>
 				Users must follow <a href="https://raw.githubusercontent.com/microsoft/XPretrain/main/hd-vila-100m/LICENSE" style="color: white !important;">the related license</a> to use these video samples.
 			</p>
+		</div>
+	</section>
+
+	<hr class="mt-5">
+
+	<section id="presentation">
+		<div class="container text-center" style="margin-top: 10px">
+			<div class="youtube-container">
+				<iframe src="https://www.youtube.com/embed/m2NQ5k1oTcs?si=jCc8gruNWA_oXNyP&autoplay=0&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
 		</div>
 	</section>
 
@@ -268,7 +279,7 @@
 				</video>
 			</div>
 			<div class="container text-center footnote">
-				We will remove the video samples from our dataset / Github / project webpage as long as you need it. Please contact tsaishienchen at gmail dot com for the request.
+				We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.
 			</div>
 		</div>
 	</section>
@@ -283,7 +294,7 @@
 					<img src="./assets/statistic.svg" style="margin-top: -20px;">
 				</div>
 				<div class="image-item">
-					<img src="./assets/worldcloud.svg" style="margin-top: 10px; margin-bottom: 10px; width: 90%">
+					<img src="./assets/wordcloud.svg" style="margin-top: 10px; margin-bottom: 10px; width: 90%">
 				</div>
 			</div>
 		</div>
@@ -360,7 +371,7 @@
 				imageItems.forEach(item => {
 					const elementPosition = item.getBoundingClientRect().top;
 
-					if (elementPosition < window.innerHeight * 0.7) {
+					if (elementPosition < window.innerHeight * 0.85) {
 						item.style.opacity = '1';
 					} else {
 						item.style.opacity = '0';

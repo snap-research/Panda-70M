@@ -1,7 +1,7 @@
 # 🐼 Panda-70M: Dataset Dataloading
 The section includes the csv files listing the data samples in Panda-70M and the code to download the videos.
 
-**[Note] Please use the video2dataset tool from this repository to download the dataset, as the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format for now.**
+**[Note] Please use the video2dataset tool from this repository to download the dataset, as the video2dataset from [the official repository](https://github.com/iejMac/video2dataset) cannot work with our csv format.**
 
 ## Data Splitting and Download Link
   | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space |
