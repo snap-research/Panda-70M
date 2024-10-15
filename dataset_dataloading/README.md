@@ -94,8 +94,8 @@ output-folder
 - Meta information includes:
   - Caption
   - Matching score: confidence score of each video-caption pair
-  - **[🔥New]** Desirable filtering: whether the video is a desirable training sample for a video generation model. There are six categories of filtering results, including `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording` (see [here](https://github.com/snap-research/Panda-70M) for the sample in each category).
-  - **[🔥New]** Shot boundary detection: shot boundary within the video (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)).
+  - **[New🔥]** Desirable filtering: whether a video is a suitable training sample for a video generation model. There are six categories of filtering results: `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording` (see [here](https://github.com/snap-research/Panda-70M) for examples in each category).
+  - **[New🔥]** Shot boundary detection: a list of intervals representing continuous shots within a video (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the list contains only one interval, it indicates that the video does not include any shot boundaries.
   - Other metadata: video title, description, categories, subtitles, to name but a few.
 - **[Note 1]** The dataset is unshuffled and the clips from a same long video would be stored into a shard. Please manually shuffle them if needed.
 - **[Note 2]** The videos are resized into 360 px height. You can change `download_size` in the [config](./video2dataset/video2dataset/configs/panda70m.yaml) file to get different video resolutions.
