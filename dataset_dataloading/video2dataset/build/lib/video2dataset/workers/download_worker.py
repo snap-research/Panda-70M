@@ -256,6 +256,10 @@ class DownloadWorker:
                             meta["caption"] = text_caption
                             if "matching_score" in meta:
                                 meta["matching_score"] = str(eval(meta["matching_score"])[i])
+                            if "desirable_filtering" in meta:
+                                meta["desirable_filtering"] = eval(meta["desirable_filtering"])[i]
+                            if "shot_boundary_detection" in meta:
+                                meta["shot_boundary_detection"] = str(eval(meta["shot_boundary_detection"])[i])
 
                         if self.config["storage"]["captions_are_subtitles"]:
                             text_caption = meta.get("clip_subtitles")[0]["lines"][0]
