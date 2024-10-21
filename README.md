@@ -139,11 +139,11 @@ Users must follow [the related license](https://raw.githubusercontent.com/micros
 If you find this project useful for your research, please cite our paper. :blush:
 
 ```bibtex
-@article{chen2024panda70m,
-    title   = {Panda-70M: Captioning 70M Videos with Multiple Cross-Modality Teachers},
-    author  = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Deyneka, Ekaterina and Chao, Hsiang-wei and Jeon, Byung Eun and Fang, Yuwei and Lee, Hsin-Ying and Ren, Jian and Yang, Ming-Hsuan and Tulyakov, Sergey},
-    journal = {arXiv preprint arXiv:2402.19479},
-    year    = {2024}
+@inproceedings{chen2024panda,
+  title     = {Panda-70m: Captioning 70m videos with multiple cross-modality teachers},
+  author    = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Deyneka, Ekaterina and Chao, Hsiang-wei and Jeon, Byung Eun and Fang, Yuwei and Lee, Hsin-Ying and Ren, Jian and Yang, Ming-Hsuan and others},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year      = {2024}
 }
 ```
 
