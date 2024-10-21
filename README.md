@@ -28,7 +28,40 @@ This repository have three sections:
 - [Splitting](./splitting) includes the code to split a long video into multiple semantics-consistent short clips.
 - [Captioning](./captioning) includes the proposed video captioning model trained on Panda-70M.
 
+## 🔥 Updates (Oct 2024)
+To enhance the training of video generation models, which are intereted at *single-shot* videos with *meaningful motion* and *aesthetically pleasing scenes*, we introduce two additional annotations:
+
+- **Desirability Filtering**: This annotation assesses whether a video is a suitable training sample. We categorize videos into six groups based on their characteristics: `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording`. In the below table, we present examples for each category along with the percentage of videos within the dataset.
+- **Shot Boundary Detection**: This annotation provides a list of intervals representing continuous shots within a video, (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the length of the list is one, it indicates the video consists of a single continuous shot without any shot boundaries.
+
+<table class="center">
+  <tr>
+    <td width=33.3% style="border: none"><img src="./assets/2VcOUDaJcnk.56.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/2qUj6j7zLOQ.41.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/SimjcPdKPkE.26.gif"></td>
+  </tr>
+  <tr style="text-align: center;">
+    <td width=33.3% style="border: none">desirable (80.5%)</td>
+    <td width=33.3% style="border: none">0_low_desirable_score (5.28%)</td>
+    <td width=33.3% style="border: none">1_still_foreground_image (6.82%)</td>
+  </tr>
+  
+  <table class="center">
+  <tr>
+    <td width=33.3% style="border: none"><img src="./assets/eOfsBLszShI.16.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/3W9ck1YVx2I.15.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/14gEWADjcOI.6.gif"></td>
+  </tr>
+  <tr>
+    <td width=33.3% style="border: none">2_tiny_camera_movement (1.20%)</td>
+    <td width=33.3% style="border: none">3_screen_in_screen (5.03%)</td>
+    <td width=33.3% style="border: none">4_computer_screen_recording (1.13%)</td>
+  </tr>
+</table>
+<sup>**We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
+
 ## Dataset
+
 ### Collection Pipeline
 <p align="center" width="100%">
 <a target="_blank"><img src="assets/collection_pipeline.gif" style="width: 100%; min-width: 200px; display: block; margin: auto;"></a>
