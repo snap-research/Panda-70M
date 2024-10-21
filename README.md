@@ -32,7 +32,7 @@ This repository have three sections:
 To enhance the training of video generation models, which are intereted at *single-shot* videos with *meaningful motion* and *aesthetically pleasing scenes*, we introduce two additional annotations:
 
 - **Desirability Filtering**: This annotation assesses whether a video is a suitable training sample. We categorize videos into six groups based on their characteristics: `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording`. In the below table, we present examples for each category along with the percentage of videos within the dataset.
-- **Shot Boundary Detection**: This annotation provides a list of intervals representing continuous shots within a video, (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the length of the list is one, it indicates the video consists of a single continuous shot without any shot boundaries.
+- **Shot Boundary Detection**: This annotation provides a list of intervals representing continuous shots within a video (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the length of the list is one, it indicates the video consists of a single continuous shot without any shot boundaries.
 
 <table class="center">
   <tr>
