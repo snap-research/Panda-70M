@@ -6,11 +6,11 @@ The section includes the csv files listing the data samples in Panda-70M and the
 ## Data Splitting and Download Link
   | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space |
   |-----------------|----------|-----------------|-----------|----------------|---------------|
-  | Training (full) | [link](https://drive.google.com/file/d/1DeODUcdJCEfnTjJywM-ObmrlVg-wsvwz/view?usp=sharing) (2.01 GB) | 3,779,763 | 70,723,513 | 167 khrs  | ~36 TB  |
-  | Training (10M)  | [link](https://drive.google.com/file/d/1Lrsb65HTJ2hS7Iuy6iPCmjoc3abbEcAX/view?usp=sharing) (381 MB)  | 3,755,240 | 10,473,922 | 37.0 khrs | ~8.0 TB |
-  | Training (2M)   | [link](https://drive.google.com/file/d/1jWTNGjb-hkKiPHXIbEA5CnFwjhA-Fq_Q/view?usp=sharing) (86.5 MB) | 800,000   | 2,400,000  | 7.56 khrs | ~1.6 TB |
-  | Validation      | [link](https://drive.google.com/file/d/1cTCaC7oJ9ZMPSax6I4ZHvUT-lqxOktrX/view?usp=sharing) (803 KB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
-  | Testing         | [link](https://drive.google.com/file/d/1ee227tHEO-DT8AkX7y2q6-bfAtUL-yMI/view?usp=sharing) (803 KB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
+  | Training (full) | [link](https://drive.google.com/file/d/1pbh8W3qgst9CD7nlPhsH9wmUSWjQlGdW/view?usp=sharing) (2.73 GB) | 3,779,763 | 70,723,513 | 167 khrs  | ~36 TB  |
+  | Training (10M)  | [link](https://drive.google.com/file/d/1LLOFeYw9nZzjT5aA1Wj4oGi5yHUzwSk5/view?usp=sharing) (504 MB)  | 3,755,240 | 10,473,922 | 37.0 khrs | ~8.0 TB |
+  | Training (2M)   | [link](https://drive.google.com/file/d/1k7NzU6wVNZYl6NxOhLXE7Hz7OrpzNLgB/view?usp=sharing) (118 MB)  | 800,000   | 2,400,000  | 7.56 khrs | ~1.6 TB |
+  | Validation      | [link](https://drive.google.com/file/d/1uHR5iXS3Sftzw6AwEhyZ9RefipNzBAzt/view?usp=sharing) (1.2 MB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
+  | Testing         | [link](https://drive.google.com/file/d/1BZ9L-157Au1TwmkwlJV8nZQvSRLIiFhq/view?usp=sharing) (1.2 MB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
 - Validation and testing set are collected from 2,000 source videos which do not appear in any training set to avoid testing information leakage. For each source video, we randomly sample 3 clips.
 - Training set (10M) is the high-quality subset of training set (full). In the subset, we only sample at most 3 clips from a source video to increase diversity and the video-caption matching scores are all larger than 0.43 to guarantee a better caption quality.
 - Training set (2M) is randomly sampled from training set (10M) and include 3 clips for each source video.
@@ -33,7 +33,7 @@ video2dataset --url_list="<csv_file>" \
               --caption_col="caption" \
               --clip_col="timestamp" \
               --output_folder="<output_folder>" \
-              --save_additional_columns="[matching_score]" \
+              --save_additional_columns="[matching_score,desirable_filtering,shot_boundary_detection]" \
               --config="video2dataset/video2dataset/configs/panda70m.yaml"
 ```
 ### Known Issues
@@ -91,7 +91,12 @@ output-folder
  ...
 ```
 - Each data comes with 3 files: `.mp4` (video), `.txt` (caption), `.json` (meta information)
-- Meta information includes matching score (confidence score of each video-caption pair), caption, video title / description / categories / subtitles, to name but a few.
+- Meta information includes:
+  - Caption
+  - Matching score: confidence score of each video-caption pair
+  - **[🔥 New]** Desirablability filtering: whether a video is a suitable training sample for a video generation model. There are six categories of filtering results: `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording`. Check [here](https://github.com/snap-research/Panda-70M?tab=readme-ov-file#-updates-oct-2024) for examples for each category.
+  - **[🔥 New]** Shot boundary detection: a list of intervals representing continuous shots within a video (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the length of the list is one, it indicates the video consists of a single continuous shot without any shot boundaries.
+  - Other metadata: video title, description, categories, subtitles, to name but a few.
 - **[Note 1]** The dataset is unshuffled and the clips from a same long video would be stored into a shard. Please manually shuffle them if needed.
 - **[Note 2]** The videos are resized into 360 px height. You can change `download_size` in the [config](./video2dataset/video2dataset/configs/panda70m.yaml) file to get different video resolutions.
 - **[Note 3]** The videos are downloaded with audio by default. You can change `download_audio` in the [config](./video2dataset/video2dataset/configs/panda70m.yaml) file to turn off the audio and increase download speed.

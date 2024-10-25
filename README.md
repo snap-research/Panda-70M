@@ -28,7 +28,40 @@ This repository have three sections:
 - [Splitting](./splitting) includes the code to split a long video into multiple semantics-consistent short clips.
 - [Captioning](./captioning) includes the proposed video captioning model trained on Panda-70M.
 
+## 🔥 Updates (Oct 2024)
+To enhance the training of video generation models, which are intereted at *single-shot* videos with *meaningful motion* and *aesthetically pleasing scenes*, we introduce two additional annotations:
+
+- **Desirability Filtering**: This annotation assesses whether a video is a suitable training sample. We categorize videos into six groups based on their characteristics: `desirable`, `0_low_desirable_score`, `1_still_foreground_image`, `2_tiny_camera_movement`, `3_screen_in_screen`, `4_computer_screen_recording`. In the below table, we present examples for each category along with the percentage of videos within the dataset.
+- **Shot Boundary Detection**: This annotation provides a list of intervals representing continuous shots within a video (predicted by [TransNetV2](https://github.com/soCzech/TransNetV2)). If the length of the list is one, it indicates the video consists of a single continuous shot without any shot boundaries.
+
+<table class="center">
+  <tr>
+    <td width=33.3% style="border: none"><img src="./assets/2VcOUDaJcnk.56.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/2qUj6j7zLOQ.41.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/SimjcPdKPkE.26.gif"></td>
+  </tr>
+  <tr style="text-align: center;">
+    <td width=33.3% style="border: none">desirable (80.5%)</td>
+    <td width=33.3% style="border: none">0_low_desirable_score (5.28%)</td>
+    <td width=33.3% style="border: none">1_still_foreground_image (6.82%)</td>
+  </tr>
+  
+  <table class="center">
+  <tr>
+    <td width=33.3% style="border: none"><img src="./assets/eOfsBLszShI.16.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/3W9ck1YVx2I.15.gif"></td>
+    <td width=33.3% style="border: none"><img src="./assets/14gEWADjcOI.6.gif"></td>
+  </tr>
+  <tr>
+    <td width=33.3% style="border: none">2_tiny_camera_movement (1.20%)</td>
+    <td width=33.3% style="border: none">3_screen_in_screen (5.03%)</td>
+    <td width=33.3% style="border: none">4_computer_screen_recording (1.13%)</td>
+  </tr>
+</table>
+<sup>**We will remove the video samples from our dataset / Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
+
 ## Dataset
+
 ### Collection Pipeline
 <p align="center" width="100%">
 <a target="_blank"><img src="assets/collection_pipeline.gif" style="width: 100%; min-width: 200px; display: block; margin: auto;"></a>
@@ -37,11 +70,11 @@ This repository have three sections:
 ### Download
   | Split           | Download | # Source Videos | # Samples | Video Duration | Storage Space|
   |-----------------|----------|-----------------|-----------|----------------|--------------|
-  | Training (full) | [link](https://drive.google.com/file/d/1DeODUcdJCEfnTjJywM-ObmrlVg-wsvwz/view?usp=sharing) (2.01 GB) | 3,779,763 | 70,723,513 | 167 khrs  | ~36 TB  |
-  | Training (10M)  | [link](https://drive.google.com/file/d/1Lrsb65HTJ2hS7Iuy6iPCmjoc3abbEcAX/view?usp=sharing) (381 MB)  | 3,755,240 | 10,473,922 | 37.0 khrs | ~8.0 TB |
-  | Training (2M)   | [link](https://drive.google.com/file/d/1jWTNGjb-hkKiPHXIbEA5CnFwjhA-Fq_Q/view?usp=sharing) (86.5 MB) | 800,000   | 2,400,000  | 7.56 khrs | ~1.6 TB |
-  | Validation      | [link](https://drive.google.com/file/d/1cTCaC7oJ9ZMPSax6I4ZHvUT-lqxOktrX/view?usp=sharing) (803 KB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
-  | Testing         | [link](https://drive.google.com/file/d/1ee227tHEO-DT8AkX7y2q6-bfAtUL-yMI/view?usp=sharing) (803 KB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
+  | Training (full) | [link](https://drive.google.com/file/d/1pbh8W3qgst9CD7nlPhsH9wmUSWjQlGdW/view?usp=sharing) (2.73 GB) | 3,779,763 | 70,723,513 | 167 khrs  | ~36 TB  |
+  | Training (10M)  | [link](https://drive.google.com/file/d/1LLOFeYw9nZzjT5aA1Wj4oGi5yHUzwSk5/view?usp=sharing) (504 MB)  | 3,755,240 | 10,473,922 | 37.0 khrs | ~8.0 TB |
+  | Training (2M)   | [link](https://drive.google.com/file/d/1k7NzU6wVNZYl6NxOhLXE7Hz7OrpzNLgB/view?usp=sharing) (118 MB)  | 800,000   | 2,400,000  | 7.56 khrs | ~1.6 TB |
+  | Validation      | [link](https://drive.google.com/file/d/1uHR5iXS3Sftzw6AwEhyZ9RefipNzBAzt/view?usp=sharing) (1.2 MB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
+  | Testing         | [link](https://drive.google.com/file/d/1BZ9L-157Au1TwmkwlJV8nZQvSRLIiFhq/view?usp=sharing) (1.2 MB)  | 2,000     | 6,000      | 18.5 hrs  | ~4.0 GB |
 
 More details can be found in [Dataset Dataloading](./dataset_dataloading) section.
   
@@ -106,11 +139,11 @@ Users must follow [the related license](https://raw.githubusercontent.com/micros
 If you find this project useful for your research, please cite our paper. :blush:
 
 ```bibtex
-@article{chen2024panda70m,
-    title   = {Panda-70M: Captioning 70M Videos with Multiple Cross-Modality Teachers},
-    author  = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Deyneka, Ekaterina and Chao, Hsiang-wei and Jeon, Byung Eun and Fang, Yuwei and Lee, Hsin-Ying and Ren, Jian and Yang, Ming-Hsuan and Tulyakov, Sergey},
-    journal = {arXiv preprint arXiv:2402.19479},
-    year    = {2024}
+@inproceedings{chen2024panda70m,
+  title     = {Panda-70M: Captioning 70M Videos with Multiple Cross-Modality Teachers},
+  author    = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Deyneka, Ekaterina and Chao, Hsiang-wei and Jeon, Byung Eun and Fang, Yuwei and Lee, Hsin-Ying and Ren, Jian and Yang, Ming-Hsuan and Tulyakov, Sergey},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year      = {2024}
 }
 ```
 
